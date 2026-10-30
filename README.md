@@ -18,6 +18,20 @@ flowchart LR
 
 One LakeFlow Job (`medallion_daily`) runs every morning at 5 AM Eastern: it generates the day's file, then runs both branches in parallel.
 
+## Screenshots
+
+**Daily orchestration — LakeFlow Job with 5 tasks**
+
+![LakeFlow Job graph](images/job_graph.png)
+
+**Spark Declarative Pipeline — incremental run (only the new day's 28 rows processed)**
+
+![Pipeline graph](images/pipeline_graph.png)
+
+**Data-quality expectations — 10 non-data postings dropped out of 873**
+
+![Data-quality expectations](images/expectations.png)
+
 ## Tech stack
 
 Databricks (serverless) · Delta Lake · Auto Loader · LakeFlow Jobs · Spark Declarative Pipelines · Unity Catalog · PySpark · Spark SQL
